@@ -24,29 +24,16 @@ namespace Pg382Exercise
         Random random = new Random();
         Deck deck1, deck2;
 
-        private void resetDeck2_Click(object sender, EventArgs e)
-        {
-            ResetDeck(2);
-            RedrawDeck(2);
-        }
-
-        private void moveToDeck1_Click(object sender, EventArgs e)
-        {
-            if (listBox2.SelectedIndex >= 0)
-            {
-                if (deck2.Count > 0)
-                {
-                    deck1.Add(deck2.Deal(listBox2.SelectedIndex));
-                }
-            }
-            RedrawDeck(1);
-            RedrawDeck(2);
-        }
-
         private void resetDeck1_Click(object sender, EventArgs e)
         {
             ResetDeck(1);
             RedrawDeck(1);
+        }
+
+        private void resetDeck2_Click(object sender, EventArgs e)
+        {
+            ResetDeck(2);
+            RedrawDeck(2);
         }
 
         private void shuffleDeck1_Click(object sender, EventArgs e)
@@ -68,6 +55,19 @@ namespace Pg382Exercise
                 if (deck1.Count > 0)
                 {
                     deck2.Add(deck1.Deal(listBox1.SelectedIndex));
+                }
+            }
+            RedrawDeck(1);
+            RedrawDeck(2);
+        }
+
+        private void moveToDeck1_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedIndex >= 0)
+            {
+                if (deck2.Count > 0)
+                {
+                    deck1.Add(deck2.Deal(listBox2.SelectedIndex));
                 }
             }
             RedrawDeck(1);
